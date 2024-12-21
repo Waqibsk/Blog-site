@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head", { err: err }) %>
+  <link rel="stylesheet" href="/assets/home.css" />
+
+  <body>
+    
+    <div class="cards-container">
+      <% blogs.forEach(blog => { %>
+      <div class="card">
+        <div class="card-image">
+          <img src="<%=blog.imageurl%>" class="" alt="..." />
+        </div>
+        <div class="card-text"><%= blog.title %></div>
+        <div class="buttons">
+          <div class="read-more">
+            <a href="/blog/<%= blog._id%>" class="read-link">
+              <button class="read-btn">Read More</button>
+            </a>
+          </div>
+
+          <% if(locals.user){ %>
+          <div class="delete">
+            <form action="/blog/delete/<%= blog._id%>" method="post">
+              <button class="delete-btn">delete</button>
+            </form>
+          </div>
+
+          <% } %>
+        </div>
+      </div>
+
+      <% }); %>
+    </div>
+  </body>
+  <%- include("./partials/script") %>
+</html>

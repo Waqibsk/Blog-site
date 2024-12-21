@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head", { err: err }) %>
+    <link rel="stylesheet" href="/assets/signin.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <form action="/user/signin" method="post" class="form">
+        <div class="signin-box">
+          <h1 class="signin-header">Sign in</h1>
+          <div class="signin-item">
+            <input
+              class="input-box"
+              type="email"
+              class="input-field"
+
+              name="email"
+              placeholder="Email address"
+              required
+            />
+          </div>
+          <div class="signin-item">
+            <input
+              class="input-box"
+              type="password"
+              class="input-field"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="signin-btn">
+            <button type="submit" class="submit-button">Sign in</button>
+          </div>
+        </div>
+      </form>
+    </div>
+   
+    
+    <div id="errorPopup" >
+      <p id="errorMessage"></p>
+      
+    </div>
+    <%- include("./partials/script") %>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+.cards-container{
+    display: grid;
+    grid-template-rows: auto ;
+    grid-template-columns: repeat(3,1fr);
+}
+body{
+    background-color: rgb(239, 239, 239);
+
+}
+.card-image img{
+    height: 200px;
+    width: 100%;
+}
+.card{
+    margin: 40px;
+    background-color: rgb(129, 133, 145);
+    overflow: hidden;
+   border-radius: 10px;
+
+}
+.card-text {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 400;
+   
+}
+
+
+.buttons{
+    
+    display: flex;
+justify-content: space-between;
+
+}
+
+.delete-btn{
+   
+  background-color:  rgb(0, 0, 0);
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none; 
+}
+
+.read-btn{
+    border: none;
+    
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px 20px;
+  cursor: pointer;
+}
+.read-btn a{
+    
+    text-decoration: none;
+}
+.read-more{
+    justify-content:left;
+}
+
+/* Hover effects */
+.card:hover {
+    cursor: pointer;
+    z-index: 3;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+    transform: scale(1.05); 
+    transition: all 0.3s ease-in-out; 
+}
+
+
+
+@media (max-width:1100px){
+    .cards-container{
+        display: grid;
+     
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width:768px){
+    .cards-container{
+        display: grid;
+        
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+

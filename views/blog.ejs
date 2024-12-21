@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+    <%- include("./partials/head", { err: err }) %>
+    <link rel="stylesheet" href="/assets/blog.css" />
+    <link rel="stylesheet" href="/assets/comments.css" />
+  <body>
+    <div class="blog-container">
+      <div class="blog-title blog-item"><%= blog.title %></div>
+        <div class="blog-image blog-item"><img src="<%= blog.imageurl %>"  ></div>
+       
+      <div class="blog-body blog-item"><%= blog.body %></div>
+    </div>
+    <% if(locals.user){ %>
+      <div class="comment-container">
+        <form action="/blog/<%= blog._id %>" method="post" >
+          
+          <h1 class="comment-item">comments(<%= comments.length %>)</h1>
+            
+   
+          <div class="comment-item">
+            <textarea class="comment-box" name="content" placeholder="comment"></textarea>
+           
+          </div>
+          
+          <div class="comment-item">
+              <button class="comment-btn">submit</button>
+          </div>
+          
+        </form>
+
+      <% } %>
+    
+      <div class="">
+      <% let count=1; %>
+        <% comments.forEach(comment =>{  %>
+          
+          
+          <div class="comment-item user-comment"><h6 >user(<%= count++ %>)</h6><p><%= comment.content  %></p></div>
+
+
+          <% }); %>
+      </div>
+  
+  </body>
+  <%- include("./partials/script") %>
+</html>

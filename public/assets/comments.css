@@ -1,0 +1,29 @@
+.comment-container{
+    
+    width: 100%;
+    padding:2rem;
+  
+}
+.comment-item  {
+   width: 100%;
+    
+    padding: 20px;
+}
+.comment-box{
+    width: 40%;
+    height: 70px;
+    border-radius: 15px;
+    padding: 8px ;
+    font-size: 16px;
+    border: none;
+    
+}
+.comment-btn{
+      
+  background-color:  rgb(84, 45, 45);
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none; 
+  border-radius: 15px;
+}
